@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="css/indexStyle.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+<body>
+<div id="input">
+    <div id="logo"></div>
+    <div id="formInput">
+        <form id="loginForm">
+        <label id="uname"><b>Login</b></label>
+        <input type="text" placeholder="Enter Login" name="uname">
+        <label id="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw">
+		<input type="button" id="logBtn"class="logButton" value="Login" onclick="login()">
+        </form>
+    </div>
+    <div id="register">
+        <a href="#" onclick="register()">Register</a>
+    </div>
+</div>
+<div id="inputRegister">
+    <div id="logo"></div>
+    <div id="formInput">
+        <form id="registerform">
+            <label id="name"><b>First Name</b></label>
+            <input type="text" placeholder="Enter First Name" name="name">
+            <label id="lname"><b>Last Name</b></label>
+            <input type="text" placeholder="Enter Last Name" name="lname">
+            <label id="uname"><b>Login</b></label>
+            <input type="text" placeholder="Enter Login" name="reguname">
+            <label id="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="regpsw">
+            <input type="button" id="logBtn" class="logButton" value="Register" onclick="registerUser()">
+        </form>
+    </div>
+</div>
+<div id="adminPanel">
+<div id="baseTable"></div>
+<div id="baseBtn">
+<input type="button" class="logButton" value="Active Users" onclick="renderActiveUsers()">
+<input type="button" class="logButton" value="Removed Users" onclick="renderRemovedUsers()">
+</div>
+</div>
+<script src="js/User_Model.js"></script>
+<script src="js/form_validation.js"></script>
+<script src="js/Users_View.js"></script>
+<script src="js/View.js"></script>
+</body>
+</html>
