@@ -1,0 +1,131 @@
+		body{
+            background-color: ghostwhite;
+        }
+        #input {
+            margin: auto;
+            margin-top: 200px;
+            height: 500px;
+            width: 350px;
+            background-color: lavender;
+            border: 2px solid lightgray;
+            border-radius: 8px;
+            display: block;
+        }
+        #inputRegister {
+            margin: auto;
+            margin-top: 200px;
+            height: 500px;
+            width: 350px;
+            background-color: lavender;
+            border: 2px solid lightgray;
+            border-radius: 8px;
+            display: none;
+        }
+		
+		#adminPanel{
+		overflow-y: auto;
+		margin-left:350px;
+		height:500px;
+		width:800px;
+		background-color: lavender;
+        border: 2px solid lightgray;
+        border-radius: 8px;
+		display:none;
+		}
+		
+		#baseBtn{
+			margin:auto;
+			margin-top:10px;
+			height:50px;
+			width:500px;
+		}
+		
+		#baseTable{
+			overflow-y: auto;
+			margin:auto;
+			margin-top:10px;
+			height:400px;
+			width:720px;
+		}
+
+        #logo {
+            height: 80px;
+            width: 120px;
+            margin: auto;
+            margin-top: 30px;
+        }
+
+        #formInput{
+            margin: auto;
+            margin-top: 30px;
+            width: 250px;
+            height: 250px;
+        }
+
+        #login{
+            height: 50px;
+            width: 80px;
+            margin: auto;
+            margin-top: 10px;
+        }
+
+        .logButton{
+			margin:auto;
+            text-align: center;
+            background-color: slategray;
+            border-radius: 6px;
+            color: white;
+            padding: 8px 20px;
+            font-size: 12px;
+        }
+        .logButton:hover{
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+		#logBtn{
+			margin-left:80px;
+		}
+        label{
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-family: Arial;
+            color: slategrey;
+
+        }
+        input[type=text], select {
+            width: 100%;
+            padding: 8px 16px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=password], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        #register{
+            height: 50px;
+            width: 80px;
+            margin: auto;
+            margin-top: 10px;
+        }
+        a{
+            font-family: Arial;
+            color: slategrey;
+        }
+		
+		.error-message{
+			font-size:11px;
+			font-family: Arial;
+			color: red;
+		}
+		
