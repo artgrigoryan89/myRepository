@@ -39,6 +39,14 @@ function activateUser(){
 };
 
 function registerUser(){
-
+	if(registerFormValidation()){
+		var name = $("input name=['name']") ;
+		var lastName = $("input name=['lname']");
+		var login = $("input name=['reguname']");
+		var pass = $("input name=['regpsw']");
+		var user = new User(name, lastName, login, pass);
+		activeUsers.addUser(user);
+	};
+	renderActiveUsers();
 };
 
