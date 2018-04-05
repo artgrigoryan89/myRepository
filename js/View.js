@@ -11,31 +11,7 @@ function login() {
         $("#inputRegister").css("float", "left");
         $("#adminPanel").css("display", "block")
     };
-    renderActiveUsers();
-};
-
-
-function removeUser() {
-    var login = $(event.target).attr("id");
-    if (login in activeUsers.users) {
-        var user = activeUsers.users[login];
-        removedUsers.addUser(user);
-        activeUsers.removeUser(login);
-        renderActiveUsers();
-    }
-    else {
-        removedUsers.removeUser(login);
-        renderRemovedUsers();
-    };
-
-};
-
-function activateUser() {
-    var login = $(event.target).attr("id");
-    var user = removedUsers.users[login];
-    activeUsers.addUser(user);
-    removedUsers.removeUser(login);
-    renderRemovedUsers();
+    activeUsersView.render();
 };
 
 function registerUser() {
@@ -47,6 +23,5 @@ function registerUser() {
         var user = new User(name, lastName, login, pass);
         activeUsers.addUser(user);
     };
-    renderActiveUsers();
+    activeUsersView.render();
 };
-
