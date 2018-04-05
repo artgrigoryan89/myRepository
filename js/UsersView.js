@@ -62,7 +62,7 @@ ActiveUsersView.prototype = new UsersView(activeUsers, "baseTable");
 ActiveUsersView.prototype.addButtons = function () {
     var table = $(document).find("table");
     var remBtn = $('<button class="logButton">Remove</button>');
-    remBtn.unbind('click').click(this.removeUser);
+    remBtn.unbind('click').click(this.removeUser.bind(this));
     table.children('tr').append(remBtn);
 };
 
@@ -75,9 +75,9 @@ RemovedUsersView.prototype = new UsersView(removedUsers, "baseTable");
 RemovedUsersView.prototype.addButtons = function () {
     var table = $(document).find("table");
     var remBtn = $('<button class="logButton">Remove</button>');
-    remBtn.unbind('click').click(this.removeUser);
+    remBtn.unbind('click').click(this.removeUser.bind(this));
     var activateBtn = $('<button class="logButton">Activate</button>');
-    activateBtn.unbind('click').click(this.activateUser);
+    activateBtn.unbind('click').click(this.activateUser.bind(this));
     table.children('tr').append(remBtn);
     table.children('tr').append(activateBtn);
 };
