@@ -1,9 +1,14 @@
 function UsersView(obj, el) {
     this.render = function() {
         var elem = $(document).find("#" + el);
-        this.createTable(obj, elem);
+        this.createTable(this.obj, this.elem);
         this.addButtons();
-    }
+    };
+};
+
+UsersView.prototype.setData = function (obj, elem){
+    this.obj = obj;
+    this.elem = elem;
 };
 
 UsersView.prototype.createTable = function (obj, elem) {
@@ -34,7 +39,9 @@ function ActiveUsersView() {
 
 };
 
-ActiveUsersView.prototype = new UsersView(activeUsers, "baseTable");
+ActiveUsersView.prototype = new UsersView();
+
+ActiveUsersView.setData(activeUsers, "baseTable");
 
 ActiveUsersView.prototype.addButtons = function () {
     var table = $(document).find("table");
@@ -56,6 +63,8 @@ function RemovedUsersView() {
 };
 
 RemovedUsersView.prototype = new UsersView(removedUsers, "baseTable");
+
+RemovedUsersView.setData(removedUsers, "baseTable");
 
 RemovedUsersView.prototype.addButtons = function () {
     var table = $(document).find("table");
