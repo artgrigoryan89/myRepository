@@ -1,4 +1,4 @@
-function UsersView(obj, el) {
+function UsersView(obj, el){
     this.render = function() {
         var elem = $(document).find("#" + el);
         this.createTable(obj, elem);
@@ -31,10 +31,8 @@ UsersView.prototype.addButtons = function(){
 };
 
 function ActiveUsersView() {
-
+    this.view = new UsersView(activeUsers, "baseTable");
 };
-
-ActiveUsersView.prototype = new UsersView(activeUsers, "baseTable");
 
 ActiveUsersView.prototype.addButtons = function () {
     var table = $(document).find("table");
@@ -48,14 +46,12 @@ ActiveUsersView.prototype.removeUser = function(){
     var user = activeUsers.users[login];
     removedUsers.addUser(user);
     activeUsers.removeUser(user);
-    this.render();
+    this.view.render();
 };
 
 function RemovedUsersView() {
-
+   this.view = new UsersView(removedUsers, "baseTable");
 };
-
-RemovedUsersView.prototype = new UsersView(removedUsers, "baseTable");
 
 RemovedUsersView.prototype.addButtons = function () {
     var table = $(document).find("table");
@@ -68,9 +64,9 @@ RemovedUsersView.prototype.addButtons = function () {
 };
 
 RemovedUsersView.prototype.removeUser = function(){
-  var login  = $(event.target).parent().attr(data-id);
-  var user = removedUsers.users[login];
-  removedUsers.removeUser(user);
+    var login  = $(event.target).parent().attr(data-id);
+    var user = removedUsers.users[login];
+    removedUsers.removeUser(user);
 };
 
 RemovedUsersView.prototype.activateUser = function() {
@@ -78,8 +74,5 @@ RemovedUsersView.prototype.activateUser = function() {
     var user = removedUsers.users[login];
     activeUsers.addUser(user);
     removedUsers.removeUser(login);
-    this.render();
+    this.view.render();
 };
-
-var activeUsersView = new ActiveUsersView();
-var removedUsersView = new RemovedUsersView();
