@@ -1,4 +1,4 @@
-function UsersView(obj, el) {
+function UsersView() {
     this.render = function() {
         var elem = $(document).find("#" + el);
         this.createTable(this.obj, this.elem);
