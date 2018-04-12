@@ -62,7 +62,7 @@ function RemovedUsersView() {
 
 };
 
-RemovedUsersView.prototype = new UsersView(removedUsers, "baseTable");
+RemovedUsersView.prototype = new UsersView();
 
 RemovedUsersView.setData(removedUsers, "baseTable");
 
